@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 function useLocalStorage(key, initialValue) {
         //made a state property called StoredValue that takes a fxn as its initial value
@@ -10,7 +10,7 @@ function useLocalStorage(key, initialValue) {
         //added a setter fxn called `setValue` that takes a `value` parameter
     const setValue = (value) => {
             //set the `value` to localStorage using the `key` we passed into our hook
-        window.localStorage.setItem(key) JSON.stringify(value))
+        window.localStorage.setItem(key, JSON.stringify(value));
             //updated the state of `storedValue` with `value` and saved it to local storage.
         setStoredValue(value);
     }
